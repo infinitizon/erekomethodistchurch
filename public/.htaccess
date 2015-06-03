@@ -1,0 +1,8 @@
+RewriteEngine On # Turn on the rewriting engine
+
+#RewriteRule ^/test/(.*)$ ^/test/.(.*) [R=301,NC,L] # Handle requests for "pet-care"
+RewriteRule ^/?signin$ signin.php [L]
+RewriteRule ^/?home(/)$ home/index.php [L]
+RewriteRule ^/?home/uploads$ home/uploadify.php [L]
+RewriteRule ^[A-Za-z-/]+/?$ index.php [NC,L] # Handle requests for "pet-care"
+#php_value upload_max_filesize 10M

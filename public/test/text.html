@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    $(function() {
+        $.ajax({
+            "type": "POST", "url": '/assets/common/ajax.inc.php', "data": {gallery: 1}, "success": function(data) {
+                $('#content').html(data);
+                clickGallery();
+            }
+            , beforeSend: function() {
+                $('#content').html('<div id="loading">Loading Photo Gallery...</div>');
+            }
+        });
+    });
+    var clickGallery = function() {
+        $('.gallery').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                "type": "POST", "url": '/assets/common/ajax.inc.php', "data": {gallery: 1, gallery_id: $(this).attr('id'), currentpage: $(this).attr('currentpage')}, "success": function(data) {
+                    $('#content').html(data);
+                    clickGallery();
+                }
+                , beforeSend: function() {
+                    $('#content').html('<div id="loading">Loading Photo Gallery...</div>');
+                }
+            });
+        });
+    }
+</script>

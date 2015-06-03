@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 6, 2014, 10:50:03 PM
+    Author     : infinitizon
+*/
+
+.jcarousel-wrapper {
+    width: 1000px; margin: auto; position: relative;
+}
+/*
+This is the visible area of you carousel. Set a width here to define how much items are visible. 
+The width can be either fixed in px or flexible in %.  Position must be relative!
+*/
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+}
+
+/*
+This is the container of the carousel items.
+You must ensure that the position is relative or absolute and that the width is big enough to contain all items.
+*/
+.jcarousel ul {
+    width: 4000px;
+    position: relative;
+    /* Optional, required in this case since it's a <ul> element */
+    list-style: none; margin: 0;  padding: 0;
+}
+
+/*
+These are the item elements. jCarousel works best, if the items have a fixed width and height (but it's not required).
+*/
+.jcarousel li {
+    /* Required only for block elements like <li>'s */
+    float: left;
+}
+/** Carousel Controls **/
+.jcarousel-prev, .jcarousel-next {
+    position: absolute; top: 130px;
+    width: 30px; height: 30px;
+    background: #4E443C;
+    font: 24px/27px Arial, sans-serif; color: #fff; text-align: center; text-decoration: none; text-shadow: 0 0 1px #000;
+    -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px;
+    -webkit-box-shadow: 0 0 2px #999; -moz-box-shadow: 0 0 2px #999; box-shadow: 0 0 2px #999;
+}
+.jcarousel-prev {
+    /*left: -50px; -- This pulls the previous button left*/
+}
+.jcarousel-next {
+   /* right: -50px;-- This pulls next button right*/right: 0;
+}
+/*Didn't seem neccessary
+    '.jcarousel-prev:hover span, .jcarousel-next:hover span {
+    display: block;
+    }
+*/
+.jcarousel-prev.inactive, .jcarousel-next.inactive {
+    opacity: .5;
+    cursor:default;
+}
+/** Carousel Pagination **/
+.jcarousel-pagination {
+    position:absolute; bottom:0; right:10px;
+}
+.jcarousel-pagination a {
+    text-decoration:none; display:inline-block;
+    font-size:11px; line-height:14px; min-width:14px;
+    background:#fff; color:#4E443C; border-radius:14px; padding:3px; text-align:center;
+    margin-right: 2px;
+    opacity: .75;
+}
+.jcarousel-pagination a.active {
+    background: #4E443C; color: #fff; opacity: 1;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+}
